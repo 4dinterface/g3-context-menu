@@ -1,0 +1,13 @@
+{
+  "name": "g3-context-menu",
+  "homepage": "https://github.com/4dinterface/g3-context-menu",
+  "_release": "737b3f65e6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "737b3f65e6d89924eeee7b6afca04640c8487458"
+  },
+  "_source": "https://github.com/4dinterface/g3-context-menu.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/4dinterface/g3-context-menu.git"
+}

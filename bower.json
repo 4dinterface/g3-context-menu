@@ -1,0 +1,35 @@
+{
+  "name": "g3-workspace",
+  "version": "0.0.0",
+  "authors": [
+    "4dinterface <4dinterface@mail.ru>"
+  ],
+  "description": "app workspace",
+  "main": "gr-workspace",
+  "keywords": [
+    "tdi",
+    "tabs",
+    "g3"
+  ],
+  "license": "MIT",
+  "homepage": "4dinterface@mail.ru",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+
+  "dependencies": {
+    "iron-icons": "PolymerElements/iron-icons#~1.0.4",
+    "polymer": "Polymer/polymer#1.1.0",
+    "g3-context-menu":"https://github.com/4dinterface/g3-context-menu.git"
+  },
+  
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+
+}

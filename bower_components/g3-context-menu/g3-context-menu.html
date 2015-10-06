@@ -1,0 +1,70 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="g3-context-menu">
+  <style>
+    :host {
+      display: block;
+      position:absolute;
+      left:0px;
+      top:0px;
+      width:100%;
+      height:100%;
+    }
+    ul{
+      list-style-type: none;        
+      width:250px;     
+      background:#f1f1f1;    
+      position:absolute;
+      display:block;
+      padding:0px;      
+    }
+    li{
+      padding:4px;       
+      padding-left:8px; 
+    }
+    li:hover{
+      background:orange;
+    }
+  </style>
+  <template>              
+   
+    <ul id="menupanel">
+      <template is="dom-repeat" items="{{items}}" in>
+        <template is="dom-if" if="{{item.hr}}"><hr/></template>        
+        <li on-tap="select" itemindex="{{index}}">{{item.text}}</li>  
+      </template>
+    </ul>
+
+  </template>
+</dom-module>
+
+<script>
+  (function () {
+    Polymer({
+      is: 'g3-context-menu',      
+      
+      properties:{
+        x:{notify:true},
+        y:{notify:true},
+        items:{notify:true,type:"array"}
+      }, 
+       
+      attached:function(){        
+        this.addEventListener("click",this.close.bind(this));
+        this.addEventListener("contextmenu",this.close.bind(this));
+        this.$.menupanel.style.left=this.x+"px";
+        this.$.menupanel.style.top=this.y+"px";
+      },
+
+      close:function(e){        
+        Polymer.dom(this.parentNode).removeChild(this);        
+        e.preventDefault();
+      },
+
+      select:function(e){
+        if(!this.items[e.target.itemindex].fn) return;
+        this.items[e.target.itemindex].fn(this.options)
+      }
+    });
+  })();
+</script>
